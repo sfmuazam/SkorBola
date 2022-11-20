@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MatchActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Match Score"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/skor_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/home_logo"
+                    android:layout_width="500px"
+                    android:maxWidth="100dp"
+                    android:maxHeight="100dp"
+                    android:layout_height="200px"
+                    android:layout_weight="2"
+                    android:layout_gravity="center_horizontal"
+                    app:civ_border_color="#000000"
+                    android:src="@mipmap/ic_launcher_round" />
+
+                <TextView
+                    android:id="@+id/score_home"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:text="0"
+                    android:layout_weight="3"
+                    android:textSize="48dp" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/txt_home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Home Team"
+                android:layout_gravity="center_horizontal"
+                android:textAlignment="center"
+                android:layout_marginTop="30dp"
+                android:textSize="30sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp">
+                <Button
+                    android:id="@+id/home1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="15dp"
+                    android:text="+1"/>
+                <Button
+                    android:id="@+id/home2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="15dp"
+                    android:text="+2"/>
+                <Button
+                    android:id="@+id/home3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="15dp"
+                    android:text="+3"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/score_away"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:text="0"
+                    android:layout_weight="3"
+                    android:textSize="48dp" />
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/away_logo"
+                    android:layout_width="500px"
+                    android:layout_height="200px"
+                    android:maxWidth="100dp"
+                    android:maxHeight="100dp"
+                    android:layout_weight="2"
+                    android:layout_gravity="center"
+                    app:civ_border_color="#000000"
+                    android:src="@mipmap/ic_launcher_round" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/txt_away"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Away Team"
+                android:textAlignment="center"
+                android:layout_marginTop="30dp"
+                android:textSize="30sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp">
+                <Button
+                    android:id="@+id/away1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="15dp"
+                    android:text="+1"/>
+                <Button
+                    android:id="@+id/away2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="15dp"
+                    android:text="+2"/>
+                <Button
+                    android:id="@+id/away3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="15dp"
+                    android:text="+3"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/skor_container"
+        android:layout_marginTop="32dp"
+        android:textSize="18dp"
+        android:paddingVertical="12dp"
+        android:paddingHorizontal="20dp"
+        android:background="@color/colorDanger"/>
+
+    <Button
+        android:id="@+id/btn_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="14dp"
+        android:text="Cek Hasil"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/colorSafe"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
